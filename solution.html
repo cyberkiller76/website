@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestorX</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+.nav-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ff00;
+    font-size: 20px;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.section .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #00ff00 50%, #000 50%);
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: progress 2s infinite alternate;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content, .image-content {
+    flex: 1;
+}
+
+.text-content {
+    padding: 20px;
+    text-align: left;
+}
+
+/* .section-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+} */
+
+/* .section-image {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #000;
+    color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+}
+#execution.section {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#execution.section .content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#execution.section .image-content {
+    flex: 1;
+    background-color: #000;
+}
+
+#execution.section .image-content .section-image {
+    border-top-left-radius: 15px; /* Rounds the top-left corner */
+    border-bottom-left-radius: 15px; /* Rounds the bottom-left corner */
+    border-top-right-radius: 0; /* Ensures the top-right corner is square */
+    border-bottom-right-radius: 0; /* Ensures the bottom-right corner is square */
+}
+
+#execution.section .text-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Rest of your existing styles remain unchanged */
+
+/* Rest of your existing styles remain unchanged */
+
+.disclaimer {
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+@keyframes progress {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+    color: #000;
+}
+.strategy-section {
+    margin-bottom: 100; /* Remove top margin to eliminate gap with previous section */
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Remove all margins except left/right auto */
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* .strategy-section {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+} */
+.strategy-section.content-left p{
+    color: #fff;
+}
+
+.content-left {
+    flex: 1;
+    background-color: #00ff00;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #000;
+}
+
+.content-right {
+    flex: 1;
+    background-color: #000;
+}
+
+.section-icon {
+    width: 200px;
+    height: 80px;
+    margin-bottom: 20px;
+    
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+@media (max-width: 768px) {
+    .strategy-section {
+        flex-direction: column;
+        height: auto;
+    }
+    .content-left, .content-right {
+        width: 100%;
+        height: 300px;
+    }
+    .content-right img {
+        height: 100%;
+    }
+}
+
+/* 4651561651561564 */
+
+/* Updated CSS for Solutions section */
+.solutions-section {
+    background-color: #f5f5f5; /* Light gray background */
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 50px 20px;
+    text-align: left;
+    margin-bottom: 0; /* Remove bottom margin to eliminate gap */
+}
+
+.solutions-section h1 {
+    font-size: 4em; /* Large heading size */
+    margin-bottom: 0px;
+    color: #000;
+}
+
+.solutions-section .subtitle {
+    font-size: 1.5em; /* Subtitle size */
+    margin-bottom: 30px;
+    color: #000; /* Medium gray for subtitle */
+}
+
+.solutions-section p {
+    max-width: 600px; /* Limit width for readability */
+    font-size: 1em;
+    color: #000; /* Gray text for paragraph */
+    line-height: 1.6;
+}
+
+/* Ensure the next section (e.g., strategy-section) has no top margin to remove gap */
+
+
+/* Optional: Add a transition to smooth the content flow */
+.solutions-section, .strategy-section {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .solutions-section h1 {
+        font-size: 2.5em; /* Reduced size for mobile */
+    }
+    .solutions-section .subtitle {
+        font-size: 1.2em; /* Reduced size for mobile */
+    }
+    .solutions-section p {
+        font-size: 0.9em; /* Reduced size for mobile */
+    }
+    .strategy-section {
+        flex-direction: column;
+        height: auto;
+        margin: 0 auto; /* Ensure no gap on mobile */
+    }
+}
+/* Update Data Advisory section */
+#data-advisory.section {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto; /* Proper margin on top and bottom */
+    height: 500px; /* Fixed height to match the split design */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background for the section */
+}
+
+#data-advisory.section .content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row-reverse; /* Reverse order to place image on right */
+}
+
+#data-advisory.section .text-content {
+    flex: 1;
+    background-color: #fff; /* White background for text side */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#data-advisory.section .image-content {
+    flex: 1;
+    background-color: #000; /* Placeholder background */
+}
+
+#data-advisory.section .section-icon {
+    width: 200px; /* Size of the X icon */
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+#data-advisory.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#data-advisory.section p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #666; /* Gray text for paragraphs */
+}
+
+#data-advisory.section .section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Grayscale effect */
+    border-top-right-radius: 15px; /* Rounds the top-right corner */
+    border-bottom-right-radius: 15px; /* Rounds the bottom-right corner */
+    border-top-left-radius: 0; /* Ensures the top-left corner is square */
+    border-bottom-left-radius: 0; /* Ensures the bottom-left corner is square */
+}
+
+@media (max-width: 768px) {
+    #data-advisory.section {
+        flex-direction: column;
+        height: auto;
+        margin: 20px auto; /* Reduced margin for mobile */
+        border-radius: 10px; /* Slightly smaller radius on mobile */
+    }
+    #data-advisory.section .content-container {
+        flex-direction: column-reverse; /* Stack with image at the bottom */
+    }
+    #data-advisory.section .text-content,
+    #data-advisory.section .image-content {
+        width: 100%;
+        height: 300px; /* Adjusted height for mobile */
+    }
+    #data-advisory.section .text-content {
+        padding: 20px;
+    }
+}
+
+/* .solutions-section .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 00px;
+    color: #000;
+}
+
+.solutions-section p {
+    font-size: 1em;
+    margin-bottom: 0px;
+    color: #000;
+} */
+/* Update Contact section */
+#contact.section {
+    width: 100%;
+    max-width: 12000px;
+    margin: 0px auto; /* Proper margin on top and bottom */
+    height: 500px; /* Fixed height to match the split design */
+    /* border-radius: 15px; Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background */
+}
+
+#contact.section .content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#contact.section .content-left {
+    flex: 1;
+    background-color: #fff; /* White background */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#contact.section .content-right {
+    flex: 1;
+    background-color: #fff; /* White background */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align form to the left */
+}
+
+#contact.section h1 {
+    font-size: 4em; /* Large heading size */
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#contact.section p {
+    font-size: 1.2em; /* Subtitle size */
+    margin-bottom: 30px;
+    color: #666; /* Gray text for subtitle */
+}
+
+#contact.section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+}
+
+#contact.section form input {
+    margin-bottom: 15px; /* Space between input fields */
+    padding: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Slight rounding for inputs */
+    font-size: 1em;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s; /* Smooth border transition */
+}
+
+#contact.section form input:focus {
+    border-color: #00ff00; /* Green border on focus */
+}
+
+#contact.section form button {
+    padding: 12px;
+    background-color: #000; /* Black background */
+    color: #00ff00; /* Green text */
+    border: none;
+    border-radius: 10px; /* Rounded corners for button */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+#contact.section form button:hover {
+    background-color: #333; /* Darker gray on hover */
+}
+
+@media (max-width: 768px) {
+    #contact.section {
+        flex-direction: column;
+        height: auto;
+        margin: 20px auto; /* Reduced margin for mobile */
+        border-radius: 10px; /* Slightly smaller radius on mobile */
+    }
+    #contact.section .content-container {
+        flex-direction: column;
+    }
+    #contact.section .content-left,
+    #contact.section .content-right {
+        width: 100%;
+        padding: 20px;
+    }
+    #contact.section h1 {
+        font-size: 2.5em; /* Reduced size for mobile */
+    }
+    #contact.section p {
+        font-size: 1em; /* Reduced size for mobile */
+    }
+    #contact.section form {
+        max-width: 100%; /* Full width on mobile */
+    }
+}
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .solutions-section h1 {
+        font-size: 2.5em; /* Reduced size for mobile */
+    /* } */
+    /* .solutions-section .subtitle { */
+        /* font-size: 1.2em; Reduced size for mobile */
+    /* } */
+    /* .solutions-section p { */
+        /* font-size: 0.9em; Reduced size for mobile */
+    /* } */
+/* } */ 
+    </style>
+    <!-- <link rel="stylesheet" href="C:\Users\dell3\PycharmProjects\pythonProject\venv\Scripts\midterm\css\styles.css"> -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#insights">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="check-icon">✓</span>
+                <span class="bell-icon">🔔</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="solutions-section">
+        <h1>Solutions</h1>
+        <p class="subtitle">Helping you make the right decision.</p>
+        <p>Maximize your wealth with expert asset management. We analyze market trends, guide your investments, and help you grow your portfolio efficiently. Let us help you make the right financial decisions.</p>
+    </section>
+
+    <section class="strategy-section">
+        <div class="content-left">
+            <img src="XW.png" alt="Strategy Icon" class="section-icon">
+            <h1>Strategy</h1>
+            <p>At OurCompany, we craft intelligent, data-driven investment strategies designed to maximize your returns while minimizing risks. Our cutting-edge market analysis and expert insights empower you to make confident, well-informed financial decisions.</p>
+            <p>By leveraging strategic diversification and deep market expertise, we simplify investing complexities, ensuring a seamless wealth-building experience.</p>
+        </div>
+        <div class="content-right">
+            <img src="city.avif" alt="Cityscape" class="section-image">
+        </div>
+    </section>
+    <section id="execution" class="section">
+        <div class="content-container">
+            <div class="image-content">
+                <img src="build.avif" alt="Construction" class="section-image">
+            </div>
+            <div class="text-content">
+                <img src="XW.png" alt="Execution Icon" class="section-icon">
+                <h1>Execution</h1>
+                <p>At InvestorX, we turn strategic plans into actionable investment opportunities, ensuring seamless execution with precision and efficiency. Our expert team continuously monitors market movements, optimizing your portfolio for maximum profitability while mitigating risks.</p>
+                <p>From personalized investment roadmaps to real-time adjustments, we provide a smooth and hassle-free experience. With clear guidance and smart automation, we make investing effortless, empowering you to stay ahead in the financial game with confidence.</p>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section id="data-advisory" class="section">
+        <div class="content-container">
+            <div class="text-content">
+                <img src="XW.png" alt="Data Advisory Icon" class="section-icon">
+                <h2>Data Advisory</h2>
+                <p>At InvestorX, we transform raw financial data into actionable insights, empowering you to make smarter investment decisions. Our advanced analytics and expert guidance help you navigate complex markets with clarity and confidence, ensuring your portfolio remains optimized for success.</p>
+                <p>We provide personalized data-driven strategies, market trend analysis, and risk assessment, equipping you with the knowledge to stay ahead. Whether you're an experienced investor or our advisory services simplify wealth-building and maximize your returns.</p>
+            </div>
+            <div class="image-content">
+                <img src="robo.avif" alt="Robot" class="section-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="content-container">
+            <div class="content-left">
+                <h1>Stay Ahead of the Curve!</h1>
+                <p>Not anymore. Log in to access valuable resources.</p>
+            </div>
+            <div class="content-right">
+                <form>
+                    <input type="email" placeholder="Email *" required>
+                    <input type="text" placeholder="First name">
+                    <input type="tel" placeholder="Phone">
+                    <input type="date" placeholder="Date picker">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="contact" class="section">
+        <h1>Stay Ahead of the Curve!</h1>
+        <p>Not anymore. Log in to access available resources.</p>
+        <form>
+            <input type="email" placeholder="Email *" required>
+            <input type="text" placeholder="First name">
+            <input type="tel" placeholder="Phone">
+            <input type="date" placeholder="Date picker">
+            <button type="submit">Submit</button>
+        </form>
+    </section> -->
+
+    <footer>
+        <h1>InvestorX</h1>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Solutions</p>
+                <p>About</p>
+                <p>Insights</p>
+                <p>Contact</p>
+                <p>Home</p>
+            </div>
+            <div class="footer-center">
+                <p>Toronto, ON Canada</p>
+                <p>cyberkiller714@gmail.com</p>
+                <p>+1 (437) 366-6945</p>
+            </div>
+            <div class="footer-right">
+                <p>LinkedIn</p>
+                <p>Facebook</p>
+                <p>Privacy Policy</p>
+            </div>
+        </div>
+        <p class="disclaimer">Investments are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
+    </footer>
+
+    <script>
+
+        window.addEventListener('load', () => {
+            const section = document.querySelector('.strategy-section');
+            section.style.opacity = '0';
+            setTimeout(() => {
+                section.style.transition = 'opacity 1s ease-in';
+                section.style.opacity = '1';
+            }, 100);
+        });
+        // Simple animation for smooth scrolling
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         document.querySelector(this.getAttribute('href')).scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     });
+// });
+
+// // Form submission simulation
+// document.querySelector('form').addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     alert('Form submitted! Thank you for your interest.');
+// });
+    </script>
+</body>
+</html>

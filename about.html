@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestorX</title>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#insights">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="check-icon">✓</span>
+                <span class="bell-icon">🔔</span>
+            </div>
+        </nav>
+    </header>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            color: #000;
+        }
+        header {
+    background-color: #000;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+.nav-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ff00;
+    font-size: 20px;
+}
+
+
+        .our-story-section {
+            /* background-color: #fff; White background */
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            padding: 50px 20px;
+            text-align: left;
+        }
+
+        .our-story-section h1 {
+            font-size: 4em; /* Large heading size */
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .our-story-section p {
+            max-width: 800px; /* Wider for readability */
+            font-size: 1em;
+            color: #000; /* Gray text for paragraphs */
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Smooth transition for content */
+        .our-story-section {
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .our-story-section h1 {
+                font-size: 2.5em; /* Reduced size for mobile */
+            }
+            .our-story-section p {
+                font-size: 0.9em; /* Reduced size for mobile */
+                max-width: 90%; /* Adjust width for mobile */
+            }
+        }
+
+        .our-team-section {
+          
+            min-height: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .our-team-section h1 {
+            font-size: 4em; /* Large heading size */
+            margin-bottom: 40px;
+            color: #000;
+        }
+        /* Ensure no gap between sections */
+        .our-team-section:last-of-type {
+            margin-top: 0;
+            margin-bottom: 0; /* Remove top margin for the second section */
+        }
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between cards */
+            flex-wrap: wrap; /* Wrap cards on smaller screens */
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .team-card {
+            background-color: #1a1a1a; /* Dark background for cards */
+            border-radius: 15px; /* Rounded corners */
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            background-color: #666; /* Placeholder background */
+        }
+
+        .team-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0 5px;
+            color: #fff;
+        }
+
+        .team-card .role {
+            font-size: 1em;
+            color: #ccc; /* Light gray for role */
+            margin-bottom: 10px;
+        }
+
+        .team-card p {
+            font-size: 0.9em;
+            color: #aaa; /* Gray text for description */
+            margin-bottom: 15px;
+        }
+
+        .team-card a {
+            color: #00ff00; /* Green LinkedIn link */
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .team-card a:hover {
+            color: #00cc00; /* Slightly darker green on hover */
+        }
+
+        /* Smooth transition for content */
+        .our-team-section {
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .our-team-section h1 {
+                font-size: 2.5em; /* Reduced size for mobile */
+            }
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .team-card {
+                width: 90%; /* Adjust card width for mobile */
+                max-width: 300px;
+            }
+        }
+        .our-approach-section {
+            background-color: #00ff00; /* Green background */
+            padding: 50px 20px;
+            display: flex;
+            align-items: flex-start; /* Align to the left */
+            margin-top: 0; /* Remove top margin to eliminate gap */
+            border-top-left-radius: 40px; /* Rounded top-left corner */
+            border-top-right-radius: 40px; /* Rounded top-right corner */
+        }
+
+        .our-approach-section h1 {
+            font-size: 4em; /* Large heading size */
+            color: #000;
+            margin-right: 0px;
+        }
+
+        .approach-content {
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .approach-content p {
+            font-size: 1em;
+            color: #000;
+            line-height: 1.6;
+        }
+        footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+}
+
+        .approach-icon {
+            width: 200px;
+            height: 80px;
+            margin-right: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(XW.png); /* Replace with your icon file */
+        }
+
+        /* Smooth transition for content */
+        .our-team-section, .our-approach-section {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <section class="our-story-section">
+        <h1>Our Story</h1>
+        <p>InvestorX was founded with a vision to simplify investment and wealth management for everyone. We believe that financial growth should be accessible, strategic, and backed by data-driven insights. Our platform empowers investors with expert guidance, market intelligence, and innovative tools to navigate the complexities of the financial world with confidence.</p>
+        <p>At the core of InvestorX is a commitment to transparency, efficiency, and long-term value creation. Our team of financial experts, analysts, and tech innovators work together to design investment strategies that align with our clients’ goals, ensuring a smarter and more rewarding investment journey.</p>
+    </section>
+    <section class="our-team-section">
+        <h1>Our Team</h1>
+        <div class="team-container">
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="VedantKumar Patel">
+                <h3>Vedantumar Patel</h3>
+                <p class="role">Founder</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="Ayesha Rasheed">
+                <h3>Ayesha Rasheed</h3>
+                <p class="role">Financial Analyst</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="Dhrumi Thakkar">
+                <h3>Dhrumi Thakkar</h3>
+                <p class="role">Social media dir. & marketing manager</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    <section class="our-team-section">
+        <div class="team-container">
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="Rijul Goswami">
+                <h3>Rijul Goswami</h3>
+                <p class="role">Developer</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="XYZ">
+                <h3>XYZ</h3>
+                <p class="role">XYZ</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="team-card">
+                <img src="placeholder.jpg" alt="XYZ">
+                <h3>XYZ</h3>
+                <p class="role">XYZ</p>
+                <p>Describe the team member here. Write a brief description of their role & responsibilities, or a short bio with a background summary.</p>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    <section class="our-approach-section">
+        <div class="approach-icon"></div>
+        <div class="approach-content">
+            <h1>Our Approach</h1>
+            <p>At InvestorX, we believe in a data-driven, research-backed approach to wealth creation. Our methodology combines expert market analysis, strategic portfolio management, and cutting-edge technology to provide investors with customized financial solutions. We emphasize risk management, diversification, and sustainable growth to help our clients navigate market fluctuations and achieve long-term financial success. Our team continuously monitors market trends, regulatory changes, and emerging opportunities to keep our investments ahead of the curve. By integrating innovation with deep financial expertise, we empower individuals and businesses to make informed investment decisions with confidence.</p>
+        </div>
+    </section>
+    <footer>
+        <h1>InvestorX</h1>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Solutions</p>
+                <p>About</p>
+                <p>Insights</p>
+                <p>Contact</p>
+                <p>Home</p>
+            </div>
+            <div class="footer-center">
+                <p>Toronto, ON Canada</p>
+                <p>cyberkiller714@gmail.com</p>
+                <p>+1 (437) 366-6945</p>
+            </div>
+            <div class="footer-right">
+                <p>LinkedIn</p>
+                <p>Facebook</p>
+                <p>Privacy Policy</p>
+            </div>
+        </div>
+        <p class="disclaimer">Investments are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
+    </footer>
+
+    <script>
+        // Simple fade-in animation on load
+        window.addEventListener('load', () => {
+            const sections = document.querySelector('.our-story-section');
+            const section = document.querySelector('.our-team-section');
+            section.style.opacity = '0';
+            setTimeout(() => {
+                section.style.transition = 'opacity 1s ease-in';
+                section.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
